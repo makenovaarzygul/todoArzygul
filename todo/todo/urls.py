@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import homepage, test
+from main.views import homepage, test, check
 from homework.views import homework,newf
 
 
@@ -24,5 +24,6 @@ urlpatterns = [
     path('',homepage),
     path('test/',test,name="test"),
     path('homework/',homework,name="homework"),
-    path('newf/',newf,name="newf")
+    path('newf/',newf,name="newf"),
+    path('check/',check)
 ]
