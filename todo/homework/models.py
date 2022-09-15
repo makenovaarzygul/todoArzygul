@@ -1,5 +1,4 @@
 from django.db import models
-
 #Напишите тип данных каждого из перечисленных типов моделей django.
 # models.BooleanField() булеан
 # models.DateTimeField() строка

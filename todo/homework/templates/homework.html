@@ -1,15 +1,61 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'styles/index.css' %}"/>
-    <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styles/homework.css' %}"/>
+    
 </head>
 <body>
-    <h1>Это мой первый проект Джанго</h1>
+
+<h2>Meeting of employees of the IT company.</h2>
+<p>IT company "ARZY" - technology is the future</p>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-25">
+      <label {{ tomeet.persone}}>Persone</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label {{tomeet.phone_number}}>Phone number</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="phone_number" name="phone_number" placeholder="Your phone number..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <you for="place">Meeting place you want</label>
+    </div>
+    <div class="col-75">
+      <select id="place" name="place">
+        <option value="">Coffee house Adriano</option>
+        <option value="mikasa">Sushi bar Mikasa</option>
+        <option value="secrethall">Karaoke Secret Hall</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label {{tomeet.comment }}>Comment</label>
+    </div>
+    <div class="col-75">
+      <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px"></textarea>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input type="submit" value="submit">
+  </div>
+
+</div>
+
 </body>
 </html>
+
+

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TODO-TOMEET</title>
+        <!--<link rel="stylesheet" href="./index.css"/>-->
+        <link rel="stylesheet" href="{% static 'styles/meeting.css' %}"/>
+        <!--<link rel="stylesheet" href="./checkbox.css"/>-->
+        <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}"/>
+    </head>
+<body>
+    <section>
+        
+        <div class="create_container">
+            <input 
+            class="create_input" 
+            type="text" 
+            placeholder="Напишите сюда вашу ФИО"/>
+        <button class="create_button">Добавить</button> 
+       </div>
+       {% for tomeet  in tomeet_list %}
+        <div class="todo_container">
+
+            <div class="todo_item">   
+                <div class="todo_item_header">
+                    <label class="checkbox_container">
+                        <input type="checkbox"/>
+                        <span class="checkmark"></span>
+                    </label>
+                    <h4>{{tomeet.persone}}</h4>
+            </div>
+            <div class="todo_item_footer">
+                <p>{{tomeet.date_of_meeting}}</p>
+                <div class="action_buttons">
+                   <img src="./icons/анмаркед.png"/>
+                   <img src="./icons/delete.png"/>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label {{tomeet.comment }}>Comment</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px"></textarea>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label {{tomeet.phone_number}}>Number</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="phone_number" name="phone_number" placeholder="Your phone number..">
+                  </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+     {% endfor %}
+    </div>   
+    </section>
+</body>
+</html>
+
