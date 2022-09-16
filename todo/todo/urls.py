@@ -17,7 +17,7 @@ from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path
 from main.views import homepage, test, check,add_todo
-from homework.views import homework,newf,meeting
+from homework.views import homework,newf,meeting,add_tomeet
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -30,5 +30,6 @@ urlpatterns = [
     path('check/',check),
     path('meeting/',meeting,name="meeting"),
     path('add-todo/',add_todo,name="add-todo"),
+    path('add-tomeet/',add_tomeet,name="add-tomeet")
 ]  +static(settings.STATIC_URL,document_root=settings.STATIC_ROOT) \
    +static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -15,13 +15,18 @@
     <section>
         
         <div class="create_container">
+            <form action="{% url 'add-tomeet' %}" method="POST">
+                {% csrf_token %}
             <input 
             class="create_input" 
             type="text" 
-            placeholder="Напишите сюда  ФИО"/>
+            placeholder="Напишите сюда  ФИО"
+            name ="tomeet_text"
+            />
         <button class="create_button">Добавить</button> 
-       </div>
-       {% for tomeet  in tomeet_list %}
+            </form>
+        </div>
+           {% for tomeet  in tomeet_list %}
         <div class="todo_container">
 
             <div class="todo_item">   
@@ -31,33 +36,33 @@
                         <span class="checkmark"></span>
                     </label>
                     <h4>{{tomeet.persone}}</h4>
-            </div>
+        </div>
             <div class="todo_item_footer">
-                <p>{{tomeet.date_of_meeting}}</p>
+                    <p>{{tomeet.date_of_meeting }}</p>
                 <div class="action_buttons">
                    <img src="{% static './icons/unmarked.png' %}"/>
                    <img src="{% static './icons/no.png' %}"/>
                 </div>
                 <div class="row">
                   <div class="col-25">
-                    <label {{tomeet.comment }}>Comment</label>
+                    <label> {{tomeet.comment }}</label>Comment</label>
                   </div>
                   <div class="col-75">
                     <textarea id="comment" name="comment" placeholder="Write something.." style="height:200px"></textarea>
                 </div>
                 <div class="row">
                   <div class="col-25">
-                    <label {{tomeet.phone_number}}>Number</label>
+                    <label>{{tomeet.phone_number}} Number</label>
                   </div>
                   <div class="col-75">
-                    <input type="text" id="phone_number" name="phone_number" placeholder="Your phone number..">
+                    <input type="text" id="phone_number" name="phone_number" placeholder="Your second phone number?">
                   </div>
                   </div>
                 </div>
                 </div>
-            </div>
+                </div>
         </div>
-     {% endfor %}
+            {% endfor %}
     </div>   
     </section>
 </body>
